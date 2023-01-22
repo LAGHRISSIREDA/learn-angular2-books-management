@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 import { Book } from '../../types/Book';
 
 @Component({
@@ -7,13 +8,18 @@ import { Book } from '../../types/Book';
   styleUrls: ['./book.component.css'],
 })
 export class BookComponent {
+constructor(private carteService : CartService){
+
+}
+
   @Input()
   book: Book = {} as Book;
 
-  @Output()
-  bookEmitter = new EventEmitter<Book>();
+  // @Output()
+  // bookEmitter = new EventEmitter<Book>();
 
   addToCart() {
-    this.bookEmitter.emit(this.book);
+    this.carteService.add(this.book);
+    // this.bookEmitter.emit(this.book);
   }
 }

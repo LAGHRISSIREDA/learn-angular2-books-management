@@ -2,6 +2,7 @@
 
 <ul *ngIf="!isDisabled">
  <ng-container *ngFor="let singleBook of books ; let i = index">
-      <app-book (bookEmitter)="addToCart($event)" [book]="singleBook"></app-book>
+     <!-- (bookEmitter)="addToCart($event)"  -->
+      <app-book [book]="singleBook"></app-book>
  </ng-container>
 </ul>

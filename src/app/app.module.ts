@@ -5,9 +5,10 @@ import { AppComponent } from './app.component';
 import { BooksComponent } from './books/books.component';
 import { BookComponent } from './books/book/book.component';
 import { BooksModule } from './books/books.module';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CartComponent],
   imports: [BrowserModule, FormsModule, BooksModule],
   bootstrap: [AppComponent],
 })

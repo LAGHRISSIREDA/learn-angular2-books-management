@@ -13,15 +13,9 @@ export class BooksComponent {
 
   books: Book[] = [];
 
-  card : Book[] = [] ;
-
   isDisabled: boolean = false;
   myMessage: string = '';
 
-
-  addToCart(event : Book){
-      console.log(event);
-  }
 
 
   ngOnInit(): void{

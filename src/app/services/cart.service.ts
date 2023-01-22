@@ -15,6 +15,10 @@ export class CartService {
     this.cart.push(book);
   }
 
+  remove(book : Book){
+    this.cart = this.cart.filter((b)=>b!=book);
+  }
+
   get(){
     return this.cart;
   }

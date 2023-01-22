@@ -8,8 +8,10 @@ import { Book } from '../../types/Book';
   styleUrls: ['./book.component.css'],
 })
 export class BookComponent {
-constructor(private carteService : CartService){
 
+  isInCart : boolean = false;
+
+constructor(private carteService : CartService){
 }
 
   @Input()
@@ -19,7 +21,13 @@ constructor(private carteService : CartService){
   // bookEmitter = new EventEmitter<Book>();
 
   addToCart() {
+    this.isInCart = true;
     this.carteService.add(this.book);
     // this.bookEmitter.emit(this.book);
+  }
+
+  removeFromCart(){
+    this.isInCart = false;
+    this.carteService.remove(this.book);
   }
 }
